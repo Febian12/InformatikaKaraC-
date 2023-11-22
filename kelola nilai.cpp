@@ -11,7 +11,8 @@ string siswa[10] = {"Ajeng", "Baco", "Cecep", "Dodi", "Eman", "Fina", "Gius", "H
 
 //Deklarasi array nilai (dua dimensi) dengan jumlah baris 10 dan kolom 5
 //baris menggambarkan kumpulan nilai yang dimiliki setiap siswa, kolom menggambarkan rincian nilai setiap siswa
-int nilai[10][5] = {
+int nilai[10][5];
+/* = {
     {80,98,85,67,80},
     {70,68,87,87,90},
     {70,86,75,92,79},
@@ -23,13 +24,20 @@ int nilai[10][5] = {
     {80,98,95,100,90},
     {81,94,84,66,82}
 };
-
+*/
+for(int i = 0;i<10;i++){
+    cout<<siswa[i]<<" : "<<endl;
+    for(int j = 0;j<5;j++){
+        cout<<"Nilai ke - "<<j+1<<" = ";
+        cin>>nilai[i][j];
+    }
+}
 //inisialisasi variabel rata-rata yang akan menampung rata-rata nilai setiap siswa
 double rata_rata = 0;
 
 for(int i = 0;i<10;i++){ //perulangan untuk baris array nilai dengan indeks 0 - 9
 int jumlah = 0; //deklarasi variabel jumlah, untuk menjumlahkan semua nilai masing-masing siswa (ini diperlukan untuk mencari nilai rata-rata
-    cout<<siswa[i]<<" : "; //menampilkan semua nama pada array siswa
+    cout<<"Masukkan nilai "<<siswa[i]<<" : "; //menampilkan semua nama pada array siswa
     for(int j = 0;j<5;j++){ //perulangan untuk kolom array nilai dengan indeks 0 - 5
         jumlah+=nilai[i][j]; // menambahkan semua nilai setiap siswa ke dalam variabel jumlah
     }
